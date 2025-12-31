@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -10,25 +10,25 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setMobileMenuOpen(false);
     }
   };
@@ -44,8 +44,8 @@ const Navbar = () => {
         <div
           className={`max-w-[900px] w-full transition-all duration-300 rounded-full px-8 py-2 ${
             scrolled
-              ? 'bg-white/90 backdrop-blur-lg shadow-lg'
-              : 'bg-white/80 backdrop-blur-md shadow-md'
+              ? "bg-white/90 backdrop-blur-lg shadow-lg"
+              : "bg-white/80 backdrop-blur-md shadow-md"
           }`}
         >
           <div className="flex items-center justify-between">
@@ -53,25 +53,25 @@ const Navbar = () => {
 
             <div className="hidden md:flex items-center gap-6">
               <button
-                onClick={() => scrollToSection('features')}
+                onClick={() => scrollToSection("features")}
                 className="text-[#1A1F36] hover:text-[#4A7CFF] transition-colors font-medium px-4 py-2 rounded-full hover:bg-[#F0F4FF]"
               >
                 Features
               </button>
               <button
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => scrollToSection("pricing")}
                 className="text-[#1A1F36] hover:text-[#4A7CFF] transition-colors font-medium px-4 py-2 rounded-full hover:bg-[#F0F4FF]"
               >
                 Pricing
               </button>
               <button
-                onClick={() => scrollToSection('testimonials')}
+                onClick={() => scrollToSection("testimonials")}
                 className="text-[#1A1F36] hover:text-[#4A7CFF] transition-colors font-medium px-4 py-2 rounded-full hover:bg-[#F0F4FF]"
               >
                 Testimonials
               </button>
               <button
-                onClick={() => scrollToSection('faq')}
+                onClick={() => scrollToSection("faq")}
                 className="text-[#1A1F36] hover:text-[#4A7CFF] transition-colors font-medium px-4 py-2 rounded-full hover:bg-[#F0F4FF]"
               >
                 FAQ
@@ -81,6 +81,9 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                window.location.href = "http://studio.calyn.xyz";
+              }}
               className="hidden md:block bg-gradient-to-r from-[#4A7CFF] to-[#6B8FFF] text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               Build My Plan
@@ -113,10 +116,10 @@ const Navbar = () => {
               className="flex flex-col items-center gap-8 w-full max-w-md"
             >
               {[
-                { label: 'Features', id: 'features' },
-                { label: 'Pricing', id: 'pricing' },
-                { label: 'Testimonials', id: 'testimonials' },
-                { label: 'FAQ', id: 'faq' },
+                { label: "Features", id: "features" },
+                { label: "Pricing", id: "pricing" },
+                { label: "Testimonials", id: "testimonials" },
+                { label: "FAQ", id: "faq" },
               ].map((item, index) => (
                 <motion.button
                   key={item.id}
@@ -135,7 +138,9 @@ const Navbar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.4 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  window.location.href = "http://studio.calyn.xyz";
+                }}
                 className="mt-8 bg-gradient-to-r from-[#4A7CFF] to-[#6B8FFF] text-white px-12 py-4 rounded-full font-bold text-xl shadow-2xl w-full"
               >
                 Build My Plan

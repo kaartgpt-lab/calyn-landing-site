@@ -1,32 +1,32 @@
-import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
-import InfiniteCarousel from './InfiniteCarousel';
-import { TextFlip } from '../ui/text-flip';
-import { GridBackground } from '../ui/grid-background';
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
+import InfiniteCarousel from "./InfiniteCarousel";
+import { TextFlip } from "../ui/text-flip";
+import { GridBackground } from "../ui/grid-background";
 
 const Hero = () => {
   const carouselItems = [
-    '1-Click Strategy',
-    'No generic templates',
-    'Learns your voice',
-    'Anti-Cringe',
-    'Define Roles',
-    'Tone Voice',
-    'Smart Balance',
-    'Zero Cringe',
+    "1-Click Strategy",
+    "No generic templates",
+    "Learns your voice",
+    "Anti-Cringe",
+    "Define Roles",
+    "Tone Voice",
+    "Smart Balance",
+    "Zero Cringe",
   ];
 
   const flipWords = [
-    'one by one.',
-    'randomly.',
-    'without strategy.',
-    'like everyone else.',
+    "one by one.",
+    "randomly.",
+    "without strategy.",
+    "like everyone else.",
   ];
 
   return (
     <section className="relative pt-32 pb-20 px-6 overflow-hidden">
       <GridBackground />
-      
+
       <motion.div
         animate={{
           y: [0, -20, 0],
@@ -35,7 +35,7 @@ const Hero = () => {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
         className="absolute top-20 left-10 w-32 h-32 bg-[#4A7CFF]/10 rounded-full blur-3xl"
       />
@@ -47,7 +47,7 @@ const Hero = () => {
         transition={{
           duration: 15,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
         className="absolute bottom-20 right-10 w-40 h-40 bg-[#4A7CFF]/10 rounded-full blur-3xl"
       />
@@ -71,7 +71,9 @@ const Hero = () => {
           className="mb-6 flex flex-col items-center"
         >
           <h1 className="mt-4 text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            <span className="block mb-2 text-[#1A1F36]">Stop writing posts</span>
+            <span className="block mb-2 text-[#1A1F36]">
+              Stop writing posts
+            </span>
             <span className="block text-center">
               <TextFlip words={flipWords} className="text-[#4A7CFF]" />
             </span>
@@ -84,8 +86,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-l md:text-xl text-[#6B7280] mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          You are too busy to wake up and ask, "What should I post today?" Calyn builds a full 30-day plan for you in
-          minutes, based on your actual goals, not random viral templates.
+          You are too busy to wake up and ask, "What should I post today?" Calyn
+          builds a full 30-day plan for you in minutes, based on your actual
+          goals, not random viral templates.
         </motion.p>
 
         <motion.div
@@ -103,6 +106,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 1 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => {
+            window.location.href = "http://studio.calyn.xyz";
+          }}
           className="bg-gradient-to-r from-[#4A7CFF] to-[#6B8FFF] text-white px-7 py-3 rounded-full font-bold md:text-lg shadow-2xl hover:shadow-3xl transition-all"
         >
           Build My Plan
